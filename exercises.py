@@ -160,7 +160,7 @@ def weather_advice():
         print("Wear light clothing")
 
 # Call the function
-weather_advice()
+# weather_advice()
 
 
 # Exercise 5: What's the Season?
@@ -183,7 +183,48 @@ weather_advice()
 # - Ensure to validate input formats and handle unexpected inputs gracefully.
 
 def determine_season():
-    # Your control flow logic goes here
+    input_month = input("Enter the month of the year (Jan-Dec): ").lower()
+    input_day = int(input("Enter the day of the month: "))
+
+    if input_month not in ("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"):
+        print("Your input was not a valid month, please try again")
+
+    elif input_month in ("jan", "feb"):
+        print(f'{input_month} {input_day} is in Winter')
+
+    elif input_month in ("apr", "may"):
+        print(f'{input_month} {input_day} is in Spring')
+
+    elif input_month in ("jul", "aug"):
+        print(f'{input_month} {input_day} is in Summer')
+
+    elif input_month in ("oct", "nov"):
+        print(f'{input_month} {input_day} is in Fall')
+
+    elif input_month == "dec" and input_day >= 21:
+        print(f'{input_month} {input_day} is in Winter')
+
+    elif input_month == "dec" and input_day <= 20:
+        print(f'{input_month} {input_day} is in Fall')
+
+    elif input_month == "mar" and input_day >= 20:
+        print(f'{input_month} {input_day} is in Spring')
+
+    elif input_month == "mar" and input_day <= 19:
+        print(f'{input_month} {input_day} is in Winter')
+
+    elif input_month == "jun" and input_day >= 21:
+        print(f'{input_month} {input_day} is in Summer')
+
+    elif input_month == "jun" and input_day <= 20:
+        print(f'{input_month} {input_day} is in Spring')
+    
+    elif input_month == "sep" and input_day >= 22:
+        print(f'{input_month} {input_day} is in Fall')
+
+    elif input_month == "sep" and input_day <= 21:
+        print(f'{input_month} {input_day} is in Summer')
+
 
 # Call the function
 determine_season()
